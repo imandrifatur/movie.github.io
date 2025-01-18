@@ -173,6 +173,25 @@
             height: 80%;
             border-radius: 8px;
         }
+
+          /* Footer Section */
+        footer {
+            background-color: #141414;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -199,6 +218,16 @@
     <div id="video-container" class="video-container" onclick="closeVideo()">
         <iframe id="video-frame" src="" frameborder="0" allowfullscreen></iframe>
     </div>
+
+     <!-- Footer -->
+    <footer>
+        <p>Andri Movie Display - 2025</p>
+        <p>
+            <a href="#">About</a> |
+            <a href="#">Terms of Use</a> |
+            <a href="#">Privacy Policy</a>
+        </p>
+    </footer>
 
     <script>
         const API_KEY = '76850567acd1f0cd4678da174f243259';
