@@ -31,10 +31,13 @@
             font-size: 1.5em;
             font-weight: bold;
             color: #e50914;
+            text-transform: uppercase;
         }
 
         .navbar .user-info {
             color: white;
+            display: flex;
+            align-items: center;
         }
 
         .navbar .user-info span {
@@ -48,6 +51,7 @@
             border-radius: 5px;
             color: white;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
         .navbar .user-info button:hover {
@@ -57,7 +61,7 @@
         /* Search Bar */
         .search-bar {
             text-align: center;
-            margin: 100px 0 20px 0;  /* Adjusted for navbar */
+            margin: 100px 0 20px 0; /* Adjusted for navbar */
         }
 
         .search-bar input {
@@ -66,6 +70,12 @@
             width: 50%;
             border-radius: 5px;
             border: 1px solid #ccc;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-bar input:focus {
+            border-color: #e50914;
+            outline: none;
         }
 
         /* Movie Section */
@@ -75,7 +85,7 @@
             gap: 20px;
             justify-content: center;
             padding: 20px;
-            margin-top: 100px;  /* Adjusted for navbar */
+            margin-top: 100px; /* Adjusted for navbar */
         }
 
         .movie {
@@ -87,6 +97,7 @@
             position: relative;
             transition: transform 0.3s ease;
             cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         .movie img {
@@ -96,7 +107,7 @@
         }
 
         .movie:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .movie-title {
@@ -119,6 +130,7 @@
             border-radius: 50%;
             padding: 5px;
             cursor: pointer;
+            transition: color 0.3s ease;
         }
 
         .favorite-icon.favorited {
@@ -135,6 +147,7 @@
             border-radius: 50%;
             padding: 10px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
         .play-button:hover {
@@ -158,6 +171,7 @@
         .video-container iframe {
             width: 80%;
             height: 80%;
+            border-radius: 8px;
         }
     </style>
 </head>
@@ -167,7 +181,7 @@
     <div class="navbar">
         <div class="logo">Andri Movie Display</div>
         <div class="user-info">
-           
+            <button onclick="logout()">Logout</button>
         </div>
     </div>
 
@@ -281,13 +295,7 @@
             return favorites ? JSON.parse(favorites) : [];
         }
 
-        // Logout function
-        function logout() {
-            alert('Logging out...');
-            // Here you can add logic for logging out or redirecting to login page
-        }
-
-        // Call the fetchMovies function to load the movies when the page loads
+        // Initialize page with movies
         fetchMovies(API_URL);
     </script>
 
